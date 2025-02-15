@@ -101,20 +101,22 @@ const INTERESTS = [
 
 export default function Home() {
   return (
-    <div class="px-4 py-8 mx-auto bg-white">
-      <div class="max-w-screen-md mx-auto">
-        <header class="my-6 text-center">
+    <div className="min-h-screen bg-gray-50 font-inter">
+      <div className="max-w-3xl mx-auto px-4 py-16">
+        <header className="mb-16 text-center">
           <img
-            class="mx-auto rounded-full"
+            className="mx-auto rounded-full w-32 h-32 object-cover shadow-lg"
             src="/profile.jpg"
             alt="Profile Picture"
-            width="150"
-            height="150"
           />
-          <h1 class="text-4xl font-bold mt-4">Hi, I'm Casper Aangeenbrug</h1>
-          <p class="text-lg mt-2">Welcome to my personal site & blog</p>
+          <h1 className="text-4xl font-bold mt-6 text-gray-900">
+            Hi, I'm Casper Aangeenbrug
+          </h1>
+          <p className="text-lg mt-2 text-gray-600">
+            Welcome to my personal site & blog
+          </p>
         </header>
-        <main class="mt-8">
+        <main className="space-y-16">
           <Bio />
           <BlogPosts />
           <WorkingExperiences experiences={WORKING_EXPERIENCES} />
@@ -129,13 +131,15 @@ export default function Home() {
 const BlogPosts = () => {
   const { posts } = useBlogPosts();
   return (
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Latest Blog Posts</h2>
-      <ul class="space-y-2">
+    <section>
+      <h2 className="text-2xl font-semibold mb-6 text-gray-900">
+        Latest Blog Posts
+      </h2>
+      <ul className="space-y-4">
         {posts.value.map((post) => (
-          <li>
-            <h3 class="text-lg font-semibold">{post.title}</h3>
-            <p class="text-sm text-gray-500">{post.date}</p>
+          <li className="hover:bg-white p-4 rounded-lg transition-colors">
+            <h3 className="text-lg font-medium text-gray-900">{post.title}</h3>
+            <p className="text-sm text-gray-500 mt-1">{post.date}</p>
           </li>
         ))}
       </ul>
@@ -156,18 +160,26 @@ type WorkingExperience = {
 };
 
 const WorkingExperiences = ({ experiences }: WorkingExperiencesProps) => (
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Working Experience</h2>
-    <ul class="space-y-5">
+  <section>
+    <h2 className="text-2xl font-semibold mb-6 text-gray-900">
+      Working Experience
+    </h2>
+    <ul className="space-y-8">
       {experiences.map((experience) => (
-        <li>
-          <strong>{experience.company}</strong> – {experience.title}{" "}
-          ({experience.startDate} – {experience.endDate})
-          <div class={"flex flex-col gap-2"}>
-            {experience.contributions.map((contribution) => (
-              <p class="mt-1">{contribution}</p>
-            ))}
+        <li className="hover:bg-white p-6 rounded-lg transition-colors">
+          <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
+            <h3 className="font-medium text-gray-900">
+              {experience.company} – {experience.title}
+            </h3>
+            <span className="text-gray-500 text-sm">
+              {experience.startDate} – {experience.endDate}
+            </span>
           </div>
+          <ul className="space-y-2 mt-3 text-gray-700">
+            {experience.contributions.map((contribution) => (
+              <li className="list-disc ml-4">{contribution}</li>
+            ))}
+          </ul>
         </li>
       ))}
     </ul>
