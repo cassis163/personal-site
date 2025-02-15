@@ -1,4 +1,4 @@
-import useBlogPosts from "../hooks/UseBlogPosts.ts";
+import { useBlogPosts } from "../hooks/blog-post-hooks.ts";
 import { getDateDiffInYears } from "../util/date.ts";
 import { GITHUB_URL, LINKEDIN_URL } from "../util/socials.ts";
 
@@ -144,11 +144,16 @@ const BlogPosts = () => {
       </h2>
       <ul className="space-y-4">
         {posts.value.map((post) => (
-          <li className="group hover:bg-gray-900 p-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer border border-gray-800">
-            <h3 className="text-lg font-medium text-white group-hover:text-primary-400 transition-colors">
-              {post.title}
-            </h3>
-            <p className="text-sm text-gray-400 mt-1">{post.date}</p>
+          <li
+            key={post.slug}
+            className="group hover:bg-gray-900 p-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer border border-gray-800"
+          >
+            <a href={`/blog/${post.slug}`}>
+              <h3 className="text-lg font-medium text-white group-hover:text-primary-400 transition-colors">
+                {post.title}
+              </h3>
+              <p className="text-sm text-gray-400 mt-1">{post.date}</p>
+            </a>
           </li>
         ))}
       </ul>
