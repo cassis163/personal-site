@@ -13,7 +13,7 @@ const WORKING_EXPERIENCES: WorkingExperience[] = [
     startDate: "2024",
     endDate: "present",
     contributions: [
-      "Advised and worked on transition the software architecture from microservices to modular monolith to make it easier to maintain with a small team.",
+      "Advised and worked on transitioning the software architecture from microservices to a modular monolith to make it easier to maintain with a small team.",
       "Dockerized the main application to make local development easier and to ensure that the application runs the same in all environments.",
       "Built the groundwork for E2E testing with Jenkins, Cypress and Docker to ensure that orders are processed correctly. The entire flow from the customer placing an order to the order being shipped was covered by the tests.",
     ],
@@ -63,7 +63,7 @@ const EDUCATIONS: Education[] = [
     school: "HZ University of Applied Sciences",
     degree: "Bachelor of ICT",
     startDate: "2018",
-    endDate: "2023",
+    endDate: "2022",
     description:
       "I studied software engineering and learned about different programming languages, software design patterns, and how to work in a team.",
   },
