@@ -21,7 +21,7 @@ const WORKING_EXPERIENCES: WorkingExperience[] = [
     startDate: "2022",
     endDate: "2022",
     contributions: [
-      "Researched a way to improve the performance of the product search by using Elasticsearch.",
+      "Researched a way to improve the performance of an article search index by using Elasticsearch.",
     ],
   },
   {
