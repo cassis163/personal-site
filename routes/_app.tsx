@@ -6,7 +6,7 @@ export default function App({ Component }: PageProps) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>personal-site</title>
+        <title>Casper Aangeenbrug</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body class={"m-0"}>
@@ -20,7 +20,7 @@ export default function App({ Component }: PageProps) {
             background: "#f2f2f2",
           }}
         >
-          © {new Date().getFullYear()} personal-site. All rights reserved.
+          © {new Date().getFullYear()} Casper Aangeenbrug. All rights reserved.
         </footer>
       </body>
     </html>
