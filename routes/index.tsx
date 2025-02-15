@@ -98,9 +98,8 @@ export default function Home() {
 
               <p className="text-gray-400 max-w-xl">
                 {AGE}{" "}
-                y/o software engineer from the Netherlands. From Roblox games to
-                enterprise applications, I craft digital experiences that make a
-                difference.
+                y/o software engineer from the Netherlands. I craft digital
+                experiences that make a difference.
               </p>
 
               <div className="flex gap-6">
