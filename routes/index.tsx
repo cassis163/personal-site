@@ -68,37 +68,6 @@ const EDUCTIONS: Education[] = [
   },
 ];
 
-const INTERESTS = [
-  {
-    name: "Running",
-    notableAchievements: [
-      "Working my way towards first competitions",
-    ],
-  },
-  {
-    name: "DJ-producing",
-    notableAchievements: [
-      "Played at a local club",
-      "I release music on Soundcloud",
-    ],
-  },
-  {
-    name: "Chess",
-    notableAchievements: [
-      "~ 2700 puzzle rating on Chess.com",
-      "~ 1450 rated on Chess.com",
-    ],
-  },
-  {
-    name: "Football (Soccer)",
-    notableAchievements: [
-      "Played when I was younger, but still enjoy watching games",
-      "Won the local league with my team couple of times",
-      "Became captain of the team",
-    ],
-  },
-];
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
@@ -121,7 +90,6 @@ export default function Home() {
           <BlogPosts />
           <WorkingExperiences experiences={WORKING_EXPERIENCES} />
           <Educations educations={EDUCTIONS} />
-          <Interests interests={INTERESTS} />
         </main>
       </div>
     </div>
@@ -236,21 +204,3 @@ type Interest = {
   name: string;
   notableAchievements: string[];
 };
-
-const Interests = ({ interests }: InterestsProps) => (
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Interests</h2>
-    <ul class="space-y-5">
-      {interests.map((interest) => (
-        <li>
-          <strong>{interest.name}</strong>
-          <div class={"flex flex-col gap-2"}>
-            {interest.notableAchievements.map((achievement) => (
-              <p class="mt-1">{achievement}</p>
-            ))}
-          </div>
-        </li>
-      ))}
-    </ul>
-  </section>
-);
