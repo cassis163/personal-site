@@ -70,50 +70,57 @@ const EDUCTIONS: Education[] = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-inter">
-      <div className="max-w-5xl mx-auto px-4 py-16">
-        <header className="mb-24 relative">
-          <div className="flex flex-col items-center space-y-8">
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
+    <div className="min-h-screen font-inter bg-black text-white">
+      <div className="max-w-5xl mx-auto px-4 py-24">
+        <header className="mb-32">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
+            <div className="relative group w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+              <div className="absolute inset-0 bg-primary-400 rounded-sm blur-xl opacity-50 group-hover:opacity-70 transition-all duration-500">
               </div>
               <img
-                className="relative w-40 h-40 rounded-full object-cover ring-4 ring-white"
+                className="relative w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                 src="/profile.jpg"
                 alt="Profile Picture"
               />
             </div>
 
-            <div className="text-center max-w-2xl mx-auto space-y-4">
-              <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400">
-                Casper Aangeenbrug
-              </h1>
-              <p className="text-xl text-secondary-600 leading-relaxed">
-                A {AGE}{" "}
-                year old software engineer from the Netherlands, passionate
-                about building great software. Started coding at 12, from Roblox
-                games to enterprise applications.
-              </p>
-            </div>
+            <div className="flex flex-col gap-6 md:pt-4">
+              <div>
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-2">
+                  Casper
+                  <span className="text-primary-400">.</span>
+                </h1>
+                <p className="text-gray-400 text-lg md:text-xl">
+                  Building software since I was 12.
+                </p>
+              </div>
 
-            <div className="flex gap-4 mt-8">
-              <a
-                href="https://github.com/yourusername"
-                className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/yourusername"
-                className="px-6 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-50 transition-colors border border-primary-200"
-              >
-                LinkedIn
-              </a>
+              <p className="text-gray-400 max-w-xl">
+                {AGE}{" "}
+                y/o software engineer from the Netherlands. From Roblox games to
+                enterprise applications, I craft digital experiences that make a
+                difference.
+              </p>
+
+              <div className="flex gap-6">
+                <a
+                  href="https://github.com/yourusername"
+                  className="text-white hover:text-primary-400 transition-colors"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://linkedin.com/in/yourusername"
+                  className="text-white hover:text-primary-400 transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </header>
 
-        <main className="space-y-16">
+        <main className="space-y-24">
           <BlogPosts />
           <WorkingExperiences experiences={WORKING_EXPERIENCES} />
           <Educations educations={EDUCTIONS} />
@@ -127,16 +134,16 @@ const BlogPosts = () => {
   const { posts } = useBlogPosts();
   return (
     <section>
-      <h2 className="text-2xl font-semibold mb-6 text-gray-900">
+      <h2 className="text-2xl font-semibold mb-6 text-white">
         Latest Blog Posts
       </h2>
       <ul className="space-y-4">
         {posts.value.map((post) => (
-          <li className="group hover:bg-white p-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer">
-            <h3 className="text-lg font-medium text-gray-900 group-hover:text-primary-600 transition-colors">
+          <li className="group hover:bg-gray-900 p-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer border border-gray-800">
+            <h3 className="text-lg font-medium text-white group-hover:text-primary-400 transition-colors">
               {post.title}
             </h3>
-            <p className="text-sm text-gray-500 mt-1">{post.date}</p>
+            <p className="text-sm text-gray-400 mt-1">{post.date}</p>
           </li>
         ))}
       </ul>
@@ -158,21 +165,21 @@ type WorkingExperience = {
 
 const WorkingExperiences = ({ experiences }: WorkingExperiencesProps) => (
   <section>
-    <h2 className="text-2xl font-semibold mb-6 text-gray-900">
+    <h2 className="text-2xl font-semibold mb-6 text-white">
       Working Experience
     </h2>
     <ul className="space-y-8">
       {experiences.map((experience) => (
-        <li className="group hover:bg-white p-6 rounded-lg transition-all duration-300 hover:shadow-lg">
+        <li className="group hover:bg-gray-900 p-6 rounded-lg transition-all duration-300 hover:shadow-lg border border-gray-800">
           <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
-            <h3 className="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">
+            <h3 className="font-medium text-white group-hover:text-primary-400 transition-colors">
               {experience.company} – {experience.title}
             </h3>
-            <span className="text-secondary-500 text-sm">
+            <span className="text-gray-400 text-sm">
               {experience.startDate} – {experience.endDate}
             </span>
           </div>
-          <ul className="space-y-2 mt-3 text-secondary-700">
+          <ul className="space-y-2 mt-3 text-gray-300">
             {experience.contributions.map((contribution) => (
               <li className="list-disc ml-4 group-hover:translate-x-1 transition-transform">
                 {contribution}
@@ -198,27 +205,21 @@ type Education = {
 };
 
 const Educations = ({ educations }: EducationsProps) => (
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Education</h2>
-    <ul class="space-y-5">
+  <section className="mb-8">
+    <h2 className="text-2xl font-semibold mb-4 text-white">Education</h2>
+    <ul className="space-y-5">
       {educations.map((education) => (
-        <li>
-          <strong>{education.school}</strong> – {education.degree}{" "}
-          ({education.startDate} – {education.endDate})
-          <div class={"flex flex-col gap-2"}>
-            <p class="mt-1">{education.description}</p>
+        <li className="group hover:bg-gray-900 p-6 rounded-lg transition-all duration-300 border border-gray-800">
+          <strong className="text-white">{education.school}</strong>
+          <span className="text-gray-300">– {education.degree}</span>
+          <span className="text-gray-400">
+            ({education.startDate} – {education.endDate})
+          </span>
+          <div className="flex flex-col gap-2">
+            <p className="mt-1 text-gray-300">{education.description}</p>
           </div>
         </li>
       ))}
     </ul>
   </section>
 );
-
-type InterestsProps = {
-  interests: Interest[];
-};
-
-type Interest = {
-  name: string;
-  notableAchievements: string[];
-};

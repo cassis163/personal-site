@@ -13,17 +13,34 @@ export default function App({ Component }: PageProps) {
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-gradient-to-br from-secondary-50 to-primary-50">
+      <body className="min-h-screen flex flex-col bg-black">
         <main className="flex-grow">
           <Component />
         </main>
-        <footer className="py-8 bg-white/80 backdrop-blur-sm border-t border-gray-200">
-          <div className="max-w-5xl mx-auto px-4 text-center">
-            <p className="text-sm text-gray-600">
-              © {new Date().getFullYear()}{" "}
-              <span className="text-primary-600">Casper Aangeenbrug</span>. All
-              rights reserved.
-            </p>
+        <footer className="border-t border-gray-800 bg-black/50 backdrop-blur-sm">
+          <div className="max-w-5xl mx-auto px-4 py-8">
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex items-center gap-6">
+                <a
+                  href="https://github.com/yourusername"
+                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                >
+                  GitHub
+                </a>
+                <span className="text-gray-700">•</span>
+                <a
+                  href="https://linkedin.com/in/yourusername"
+                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+
+              <p className="text-sm text-gray-500">
+                © {new Date().getFullYear()}{" "}
+                <span className="text-primary-400">Casper Aangeenbrug</span>
+              </p>
+            </div>
           </div>
         </footer>
       </body>
