@@ -210,11 +210,16 @@ const Educations = ({ educations }: EducationsProps) => (
     <ul className="space-y-5">
       {educations.map((education) => (
         <li className="group hover:bg-gray-900 p-6 rounded-lg transition-all duration-300 border border-gray-800">
-          <strong className="text-white">{education.school}</strong>
-          <span className="text-gray-300">– {education.degree}</span>
-          <span className="text-gray-400">
-            ({education.startDate} – {education.endDate})
-          </span>
+          <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
+            <div>
+              <strong className="text-white group-hover:text-primary-400 transition-colors">
+                {education.school} – {education.degree}
+              </strong>
+            </div>
+            <span className="text-gray-400 text-sm">
+              {education.startDate} – {education.endDate}
+            </span>
+          </div>
           <div className="flex flex-col gap-2">
             <p className="mt-1 text-gray-300">{education.description}</p>
           </div>
