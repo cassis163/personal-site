@@ -1,5 +1,6 @@
 import useBlogPosts from "../hooks/UseBlogPosts.ts";
 import { getDateDiffInYears } from "../util/date.ts";
+import { GITHUB_URL, LINKEDIN_URL } from "../util/socials.ts";
 
 const BIRTHDAY = new Date("2001-05-03");
 const NOW = new Date();
@@ -104,14 +105,18 @@ export default function Home() {
 
               <div className="flex gap-6">
                 <a
-                  href="https://github.com/yourusername"
+                  href={GITHUB_URL}
                   className="text-white hover:text-primary-400 transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   GitHub
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href={LINKEDIN_URL}
                   className="text-white hover:text-primary-400 transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   LinkedIn
                 </a>

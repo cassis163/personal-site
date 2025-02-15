@@ -1,4 +1,5 @@
 import { type PageProps } from "$fresh/server.ts";
+import { GITHUB_URL, LINKEDIN_URL } from "../util/socials.ts";
 
 export default function App({ Component }: PageProps) {
   return (
@@ -22,15 +23,19 @@ export default function App({ Component }: PageProps) {
             <div className="flex flex-col items-center gap-4">
               <div className="flex items-center gap-6">
                 <a
-                  href="https://github.com/yourusername"
+                  href={GITHUB_URL}
                   className="text-gray-400 hover:text-primary-400 transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   GitHub
                 </a>
                 <span className="text-gray-700">•</span>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href={LINKEDIN_URL}
                   className="text-gray-400 hover:text-primary-400 transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   LinkedIn
                 </a>
