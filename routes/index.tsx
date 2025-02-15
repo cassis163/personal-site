@@ -70,23 +70,50 @@ const EDUCTIONS: Education[] = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 font-inter">
-      <div className="max-w-3xl mx-auto px-4 py-16">
-        <header className="mb-16 text-center">
-          <img
-            className="mx-auto rounded-full w-32 h-32 object-cover shadow-lg"
-            src="/profile.jpg"
-            alt="Profile Picture"
-          />
-          <h1 className="text-4xl font-bold mt-6 text-gray-900">
-            Hi, I'm Casper Aangeenbrug
-          </h1>
-          <p className="text-lg mt-2 text-gray-600">
-            Welcome to my personal site & blog
-          </p>
+    <div className="min-h-screen font-inter">
+      <div className="max-w-5xl mx-auto px-4 py-16">
+        <header className="mb-24 relative">
+          <div className="flex flex-col items-center space-y-8">
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
+              </div>
+              <img
+                className="relative w-40 h-40 rounded-full object-cover ring-4 ring-white"
+                src="/profile.jpg"
+                alt="Profile Picture"
+              />
+            </div>
+
+            <div className="text-center max-w-2xl mx-auto space-y-4">
+              <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400">
+                Casper Aangeenbrug
+              </h1>
+              <p className="text-xl text-secondary-600 leading-relaxed">
+                A {AGE}{" "}
+                year old software engineer from the Netherlands, passionate
+                about building great software. Started coding at 12, from Roblox
+                games to enterprise applications.
+              </p>
+            </div>
+
+            <div className="flex gap-4 mt-8">
+              <a
+                href="https://github.com/yourusername"
+                className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                className="px-6 py-3 bg-white text-primary-600 rounded-lg hover:bg-gray-50 transition-colors border border-primary-200"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </header>
+
         <main className="space-y-16">
-          <Bio />
           <BlogPosts />
           <WorkingExperiences experiences={WORKING_EXPERIENCES} />
           <Educations educations={EDUCTIONS} />
@@ -105,8 +132,10 @@ const BlogPosts = () => {
       </h2>
       <ul className="space-y-4">
         {posts.value.map((post) => (
-          <li className="hover:bg-white p-4 rounded-lg transition-colors">
-            <h3 className="text-lg font-medium text-gray-900">{post.title}</h3>
+          <li className="group hover:bg-white p-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer">
+            <h3 className="text-lg font-medium text-gray-900 group-hover:text-primary-600 transition-colors">
+              {post.title}
+            </h3>
             <p className="text-sm text-gray-500 mt-1">{post.date}</p>
           </li>
         ))}
@@ -134,36 +163,25 @@ const WorkingExperiences = ({ experiences }: WorkingExperiencesProps) => (
     </h2>
     <ul className="space-y-8">
       {experiences.map((experience) => (
-        <li className="hover:bg-white p-6 rounded-lg transition-colors">
+        <li className="group hover:bg-white p-6 rounded-lg transition-all duration-300 hover:shadow-lg">
           <div className="flex flex-col sm:flex-row sm:justify-between mb-2">
-            <h3 className="font-medium text-gray-900">
+            <h3 className="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">
               {experience.company} – {experience.title}
             </h3>
-            <span className="text-gray-500 text-sm">
+            <span className="text-secondary-500 text-sm">
               {experience.startDate} – {experience.endDate}
             </span>
           </div>
-          <ul className="space-y-2 mt-3 text-gray-700">
+          <ul className="space-y-2 mt-3 text-secondary-700">
             {experience.contributions.map((contribution) => (
-              <li className="list-disc ml-4">{contribution}</li>
+              <li className="list-disc ml-4 group-hover:translate-x-1 transition-transform">
+                {contribution}
+              </li>
             ))}
           </ul>
         </li>
       ))}
     </ul>
-  </section>
-);
-
-const Bio = () => (
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-    <p>
-      Hi, I'm Casper Aangeenbrug, a {AGE}{" "}
-      year old software engineer from the Netherlands. Teached myself how to
-      code at the age of 12 with a little help from my father. Started off
-      coding in Roblox and had some fun with making things like an aerodynamics
-      simulation.
-    </p>
   </section>
 );
 

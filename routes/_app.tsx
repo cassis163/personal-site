@@ -11,18 +11,18 @@ export default function App({ Component }: PageProps) {
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
-        >
-        </link>
+        />
       </head>
-      <body className="m-0 min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col bg-gradient-to-br from-secondary-50 to-primary-50">
         <main className="flex-grow">
           <Component />
         </main>
-        <footer className="py-8 bg-gray-50 border-t border-gray-200">
-          <div className="max-w-3xl mx-auto px-4 text-center">
+        <footer className="py-8 bg-white/80 backdrop-blur-sm border-t border-gray-200">
+          <div className="max-w-5xl mx-auto px-4 text-center">
             <p className="text-sm text-gray-600">
               © {new Date().getFullYear()}{" "}
-              Casper Aangeenbrug. All rights reserved.
+              <span className="text-primary-600">Casper Aangeenbrug</span>. All
+              rights reserved.
             </p>
           </div>
         </footer>
