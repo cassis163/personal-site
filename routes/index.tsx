@@ -8,21 +8,14 @@ const AGE = getDateDiffInYears(BIRTHDAY, NOW);
 
 const WORKING_EXPERIENCES: WorkingExperience[] = [
   {
-    company: "YourSurprise",
-    title: "Intern Software engineer",
-    startDate: "2020",
-    endDate: "2020",
-    contributions: [
-      "Worked on a system that makes it easier to plan sales based on holidays in different countries.",
-    ],
-  },
-  {
     company: "Omoda",
-    title: "Intern Software engineer",
-    startDate: "2022",
-    endDate: "2022",
+    title: "Medior Software engineer",
+    startDate: "2024",
+    endDate: "present",
     contributions: [
-      "Researched a way to improve the performance of an article search index by using Elasticsearch.",
+      "Advised and worked on transition the software architecture from microservices to modular monolith to make it easier to maintain with a small team.",
+      "Dockerized the main application to make local development easier and to ensure that the application runs the same in all environments.",
+      "Built the groundwork for E2E testing with Jenkins, Cypress and Docker to ensure that orders are processed correctly. The entire flow from the customer placing an order to the order being shipped was covered by the tests.",
     ],
   },
   {
@@ -39,26 +32,25 @@ const WORKING_EXPERIENCES: WorkingExperience[] = [
   },
   {
     company: "Omoda",
-    title: "Medior Software engineer",
-    startDate: "2024",
-    endDate: "present",
+    title: "Intern Software engineer",
+    startDate: "2022",
+    endDate: "2022",
     contributions: [
-      "Advised and worked on transition the software architecture from microservices to modular monolith to make it easier to maintain with a small team.",
-      "Dockerized the main application to make local development easier and to ensure that the application runs the same in all environments.",
-      "Built the groundwork for E2E testing with Jenkins, Cypress and Docker to ensure that orders are processed correctly. The entire flow from the customer placing an order to the order being shipped was covered by the tests.",
+      "Researched a way to improve the performance of an article search index by using Elasticsearch.",
+    ],
+  },
+  {
+    company: "YourSurprise",
+    title: "Intern Software engineer",
+    startDate: "2020",
+    endDate: "2020",
+    contributions: [
+      "Worked on a system that makes it easier to plan sales based on holidays in different countries.",
     ],
   },
 ];
 
 const EDUCTIONS: Education[] = [
-  {
-    school: "HZ University of Applied Sciences",
-    degree: "Bachelor of ICT",
-    startDate: "2018",
-    endDate: "2023",
-    description:
-      "I studied software engineering and learned about different programming languages, software design patterns, and how to work in a team.",
-  },
   {
     school: "Open Universiteit",
     degree: "Master of Science in Artificial Intelligence",
@@ -66,6 +58,14 @@ const EDUCTIONS: Education[] = [
     endDate: "present",
     description:
       "I'm currently studying artificial intelligence to learn more about machine learning and neural networks. Something slightly different from my bachelor's degree to keep things interesting.",
+  },
+  {
+    school: "HZ University of Applied Sciences",
+    degree: "Bachelor of ICT",
+    startDate: "2018",
+    endDate: "2023",
+    description:
+      "I studied software engineering and learned about different programming languages, software design patterns, and how to work in a team.",
   },
 ];
 
