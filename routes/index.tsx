@@ -50,7 +50,7 @@ const WORKING_EXPERIENCES: WorkingExperience[] = [
   },
 ];
 
-const EDUCTIONS: Education[] = [
+const EDUCATIONS: Education[] = [
   {
     school: "Open Universiteit",
     degree: "Master of Science in Artificial Intelligence",
@@ -127,7 +127,7 @@ export default function Home() {
         <main className="space-y-24">
           <BlogPosts />
           <WorkingExperiences experiences={WORKING_EXPERIENCES} />
-          <Educations educations={EDUCTIONS} />
+          <Educations educations={EDUCATIONS} />
         </main>
       </div>
     </div>
